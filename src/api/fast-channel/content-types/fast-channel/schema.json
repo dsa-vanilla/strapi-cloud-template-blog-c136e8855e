@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fast_channels",
+  "info": {
+    "singularName": "fast-channel",
+    "pluralName": "fast-channels",
+    "displayName": "Fast channel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ids": {
+      "type": "uid"
+    },
+    "startTime": {
+      "type": "datetime"
+    },
+    "stopTime": {
+      "type": "datetime"
+    },
+    "title": {
+      "type": "string"
+    },
+    "episodeTitle": {
+      "type": "string"
+    },
+    "previewImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "recordingForbidden": {
+      "type": "boolean"
+    },
+    "seriesId": {
+      "type": "string"
+    }
+  }
+}

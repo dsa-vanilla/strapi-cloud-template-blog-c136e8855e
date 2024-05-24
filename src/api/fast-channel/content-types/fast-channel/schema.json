@@ -4,7 +4,8 @@
   "info": {
     "singularName": "fast-channel",
     "pluralName": "fast-channels",
-    "displayName": "Fast channel"
+    "displayName": "Fast channel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,20 +28,26 @@
       "type": "string"
     },
     "previewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "recordingForbidden": {
       "type": "boolean"
     },
     "seriesId": {
       "type": "string"
+    },
+    "channel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::channel.channel"
     }
   }
 }

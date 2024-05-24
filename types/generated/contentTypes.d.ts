@@ -821,63 +821,31 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
-export interface ApiAuthorAuthor extends Schema.CollectionType {
-  collectionName: 'authors';
+export interface ApiChannelChannel extends Schema.CollectionType {
+  collectionName: 'channels';
   info: {
-    singularName: 'author';
-    pluralName: 'authors';
-    displayName: 'Author';
-    description: 'Create authors for your content';
+    singularName: 'channel';
+    pluralName: 'channels';
+    displayName: 'channel';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    avatar: Attribute.Media;
-    email: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: 'Organize your content into categories';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    slug: Attribute.UID;
+    slug: Attribute.String;
+    media: Attribute.Media;
     description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::category.category',
+      'api::channel.channel',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::category.category',
+      'api::channel.channel',
       'oneToOne',
       'admin::user'
     > &
@@ -891,6 +859,7 @@ export interface ApiFastChannelFastChannel extends Schema.CollectionType {
     singularName: 'fast-channel';
     pluralName: 'fast-channels';
     displayName: 'Fast channel';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -904,6 +873,11 @@ export interface ApiFastChannelFastChannel extends Schema.CollectionType {
     previewImage: Attribute.Media;
     recordingForbidden: Attribute.Boolean;
     seriesId: Attribute.String;
+    channel: Attribute.Relation<
+      'api::fast-channel.fast-channel',
+      'oneToOne',
+      'api::channel.channel'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -974,8 +948,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about.about': ApiAboutAbout;
-      'api::author.author': ApiAuthorAuthor;
-      'api::category.category': ApiCategoryCategory;
+      'api::channel.channel': ApiChannelChannel;
       'api::fast-channel.fast-channel': ApiFastChannelFastChannel;
       'api::global.global': ApiGlobalGlobal;
     }

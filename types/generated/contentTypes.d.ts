@@ -866,8 +866,6 @@ export interface ApiFastChannelFastChannel extends Schema.CollectionType {
   };
   attributes: {
     ids: Attribute.UID;
-    startTime: Attribute.DateTime;
-    stopTime: Attribute.DateTime;
     title: Attribute.String;
     episodeTitle: Attribute.String;
     previewImage: Attribute.Media;
@@ -878,6 +876,8 @@ export interface ApiFastChannelFastChannel extends Schema.CollectionType {
       'oneToOne',
       'api::channel.channel'
     >;
+    startTime: Attribute.String;
+    endTime: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

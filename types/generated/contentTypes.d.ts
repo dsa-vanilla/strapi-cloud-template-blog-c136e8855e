@@ -827,6 +827,7 @@ export interface ApiChannelChannel extends Schema.CollectionType {
     singularName: 'channel';
     pluralName: 'channels';
     displayName: 'channel';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -835,6 +836,7 @@ export interface ApiChannelChannel extends Schema.CollectionType {
     slug: Attribute.String;
     media: Attribute.Media;
     description: Attribute.Text;
+    logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

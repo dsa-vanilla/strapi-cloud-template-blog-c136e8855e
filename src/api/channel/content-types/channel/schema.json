@@ -4,7 +4,8 @@
   "info": {
     "singularName": "channel",
     "pluralName": "channels",
-    "displayName": "channel"
+    "displayName": "channel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,20 @@
       "type": "string"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
       "allowedTypes": [
         "images",
         "files",
@@ -22,10 +37,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
-    },
-    "description": {
-      "type": "text"
+      "multiple": true
     }
   }
 }

@@ -30,14 +30,18 @@
       "type": "text"
     },
     "logo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "position": {
+      "type": "integer"
     }
   }
 }

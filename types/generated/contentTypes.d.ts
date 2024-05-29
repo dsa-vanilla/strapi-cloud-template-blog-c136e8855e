@@ -837,6 +837,7 @@ export interface ApiChannelChannel extends Schema.CollectionType {
     media: Attribute.Media;
     description: Attribute.Text;
     logo: Attribute.Media;
+    position: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

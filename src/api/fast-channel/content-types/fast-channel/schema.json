@@ -48,6 +48,9 @@
     },
     "endTime": {
       "type": "string"
+    },
+    "previewImageUrl": {
+      "type": "string"
     }
   }
 }

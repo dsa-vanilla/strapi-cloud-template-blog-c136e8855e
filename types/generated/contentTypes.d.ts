@@ -880,6 +880,7 @@ export interface ApiFastChannelFastChannel extends Schema.CollectionType {
     >;
     startTime: Attribute.String;
     endTime: Attribute.String;
+    previewImageUrl: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
